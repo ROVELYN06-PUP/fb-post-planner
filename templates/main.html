@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
     <meta name="author" content="">
-    <title>Movie DB | Team 4</title>
+    <title>Fb Post Planner | Team 4</title>
     <link rel="stylesheet" type="text/css" href="/static/css/bootstrap.css">
     <link rel="stylesheet" type="text/css" href="/static/css/main.css">
 </head>
@@ -25,86 +25,34 @@
 				<span class="icon-bar"></span>
 				<span class="icon-bar"></span>
 				</button>
-				<a class="navbar-brand" href="#"><span style="color:#8152e2;">Movie DB |</span> <span style="color:white;">Team 4</span></a>
+				<a class="navbar-brand" href="#"><span style="color:#8152e2;">Team 4 |</span> <span style="color:white;">Team 4</span></a>
 			</div>
-			<form class="navbar-form navbar-right" role="search" id='form-search'>
-				<div class="form-group">
-					<input type="text" class="form-control input-query" name='query' placeholder="Search">
-				</div>
-				<button id="search" type="submit" class="btn btn-default">Search</button>
-			</form>
 			<div class="collapse navbar-collapse">
 				<ul class="nav navbar-nav">
-					<li><a href="#" id="now_playing">Now Showing</a></li>
-					<li><a href="#" id="upcoming">Upcoming</a></li>
-					<li><a href="#" id="popular">Popular</a></li>
-					<li><a href="#" id="top_rated">Top Rated</a></li>
+					<li><a href="#">Post Status</a></li>
 				</ul>
+				<div id="fb-login" type="button" class="btn btn-primary navbar-btn navbar-right">Sign In</div>
+					<div id="fb-logout" type="button" class="btn btn-primary navbar-btn navbar-right" style="display:none">Log Out</div>
+				
 			</div><!--/.nav-collapse -->
 		</div>
 	</div>
 	<div class="line"></div>
 
 	<div class="container" style='position: relative;'>
-		<div class="content-grid">
-			<!--  Carousel - consult the Twitter Bootstrap docs at 
-			http://twitter.github.com/bootstrap/javascript.html#carousel -->
-			<div id="this-carousel-id" class="carousel slide"><!-- class of slide for animation -->
-				<div class="carousel-inner">
-					<div class="item active"><!-- class of active since it's the first item -->
-						<img src="static/img/1.jpg" alt="" />
-						<div class="carousel-caption">
-						<p>THE FAULT IN OUR STARS</p>
-						</div>
-					</div>
-					<div class="item">
-						<img src="static/img/2.jpg" alt="" />
-						<div class="carousel-caption">
-						<p>THE HUNGER GAMES: MOCKINGJAY</p>
-						</div>
-					</div>
-					<div class="item">
-						<img src="static/img/3.jpg" alt="" />
-						<div class="carousel-caption">
-						<p>HAUNTING IN CONNECTICUT 2</p>
-						</div>
-					</div>
-					<div class="item">
-						<img src="static/img/4.jpg" alt="" />
-						<div class="carousel-caption">
-						<p>BLACK SWAN</p>
-						</div>
-					</div>
-				</div><!-- /.carousel-inner -->
-				<!--  Next and Previous controls below
-				href values must reference the id for this carousel -->
-				<a class="carousel-control left" href="#this-carousel-id" data-slide="prev"></a>
-				<a class="carousel-control right" href="#this-carousel-id" data-slide="next"></a>
-			</div><!-- /.carousel -->
-			<div class='row movies-list'>
-				<div class="row search">
-				
-				</div>
-				
-				<div class="row now-showing">
-					
-				</div>
+		 <div class="row">
+            <form role="form" id="post-form">
+              <div class="form-group">
+                <label for="exampleInputEmail1"><strong><font face="Maiandra GD" size="6">Message: </font></strong></label><hr>
+                <textarea class="form-control" id="message" rows="5" required="" placeholder="Type your post here.."></textarea>
+              </div>
+              <button type="submit" class="btn btn-danger btn-facebook">Post</button>
+            </form>
+
+    <div class="fb-like fb_iframe_widget" data-href="https://developers.facebook.com/apps/698224480265000/dashboard/" data-layout="standard" data-action="like" data-show-faces="false" data-share="false" fb-xfbml-state="rendered" fb-iframe-plugin-query="action=like&amp;app_id=698224480265000&amp;href=https%3A%2F%2Fdevelopers.facebook.com%2Fapps%2F698224480265000%2Fdashboard%2F&amp;layout=standard&amp;locale=en_US&amp;sdk=joey&amp;share=false&amp;show_faces=false"><span style="vertical-align: bottom; width: 450px; height: 20px;"><iframe name="f2c22852b8" width="1000px" height="1000px" frameborder="0" allowtransparency="true" scrolling="no" title="fb:like Facebook Social Plugin" src="http://www.facebook.com/v2.1/plugins/like.php?action=like&amp;app_id=698224480265000&amp;channel=http%3A%2F%2Fstatic.ak.facebook.com%2Fconnect%2Fxd_arbiter%2FZEbdHPQfV3x.js%3Fversion%3D41%23cb%3Df3cd6f98ec%26domain%3Dfb-post-planner-1.appspot.com%26origin%3Dhttp%253A%252F%252Ffb-post-planner-1.appspot.com%252Fff5645964%26relation%3Dparent.parent&amp;href=https%3A%2F%2Fdevelopers.facebook.com%2Fapps%2F698224480265000%2Fdashboard%2F&amp;layout=standard&amp;locale=en_US&amp;sdk=joey&amp;share=false&amp;show_faces=false" style="border: none; visibility: visible; width: 450px; height: 20px;" class=""></iframe></span></div>
+
+    </div>
 	
-				<div class="row upcoming">
-				
-				</div>
-				
-				<div class="row popular">
-				
-				</div>
-				
-				<div class="row top">
-				
-				</div>
-			<div>
-			
-		</div>
-		
 	</div><!-- /.container -->
 
     <script src="/static/js/vendors/jquery.js"></script>
@@ -113,30 +61,6 @@
     <script src="/static/js/app.js"></script>
     <script src="/static/js/bootstrap.js"></script>
 	
-	{% raw %}
-	<script id="Handlebars-Template" type="text/x-handlebars-template">
-		<div class="col-md-5 portfolio-item" style="background-image:url('{{backdrop}}');background-size:100% 100%;margin-left:65px;margin-bottom:40px;">
-			<br/>
-			<a href="/view/{{movie-id}}">
-				<br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><center><img class="img-responsive movieinfo" src="{{img}}" alt="" style="width: 140; height:200;"></center>
-			</a>
-			<h3>
-				<a style="font-size:20px;color:white;" href="/view/{{movie-id}}">{{title}}</a>
-				<p style="font-size:15px;color:white;">Casts: {{cast}}</p>
-				<p style="font-size:15px;color:white;">Release Date: {{release}}</p>
-				<p style="font-size:12px;color:orange;">Movie Rating: {{vote}}</p>
-			</h3>
-		</div>
-    </script>
-	{% endraw %}
-	
-	<script>
-		$(document).ready(function(){
-			$('.carousel').carousel({
-			interval: 2000
-			});
-		});
-	</script>
 </body>
 
 </html>
