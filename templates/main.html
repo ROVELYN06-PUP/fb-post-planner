@@ -1,10 +1,5 @@
 <html>
 <head>
-	<meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="">
-    <meta name="author" content="">
     <title>Fb Post Planner | Team 4</title>
     <link rel="stylesheet" type="text/css" href="/static/css/bootstrap.css">
     <link rel="stylesheet" type="text/css" href="/static/css/main.css">
@@ -15,7 +10,7 @@
 	background-repeat:no-repeat;
 	background-attachment:fixed;
 	color:white !important;">
-<div id="fb-root"></div>
+	
 	<div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
 		<div class="container">
 			<div class="navbar-header">
@@ -25,7 +20,9 @@
 				<span class="icon-bar"></span>
 				<span class="icon-bar"></span>
 				</button>
-				<a class="navbar-brand" href="#"><span style="color:#8152e2;">Team 4 |</span> <span style="color:white;">Team 4</span></a>
+				<a class="navbar-brand" href="#">
+				<span style="color:#8152e2;">Team 4 |</span>
+				<span style="color:white;">Fb-Post Planner</span></a>
 			</div>
 			<div class="collapse navbar-collapse">
 				<ul class="nav navbar-nav">
@@ -43,23 +40,21 @@
 		 <div class="row">
             <form role="form" id="post-form">
               <div class="form-group">
-                <label for="exampleInputEmail1"><strong><font face="Maiandra GD" size="6">Message: </font></strong></label><hr>
+                <label for="exampleInputEmail1"><strong><font face="Maiandra GD" size="6">What's on your mind? </font></strong></label><hr>
                 <textarea class="form-control" id="message" rows="5" required="" placeholder="Type your post here.."></textarea>
               </div>
               <button type="submit" class="btn btn-danger btn-facebook">Post</button>
             </form>
 
-    <div class="fb-like fb_iframe_widget" data-href="https://developers.facebook.com/apps/698224480265000/dashboard/" data-layout="standard" data-action="like" data-show-faces="false" data-share="false" fb-xfbml-state="rendered" fb-iframe-plugin-query="action=like&amp;app_id=698224480265000&amp;href=https%3A%2F%2Fdevelopers.facebook.com%2Fapps%2F698224480265000%2Fdashboard%2F&amp;layout=standard&amp;locale=en_US&amp;sdk=joey&amp;share=false&amp;show_faces=false"><span style="vertical-align: bottom; width: 450px; height: 20px;"><iframe name="f2c22852b8" width="1000px" height="1000px" frameborder="0" allowtransparency="true" scrolling="no" title="fb:like Facebook Social Plugin" src="http://www.facebook.com/v2.1/plugins/like.php?action=like&amp;app_id=698224480265000&amp;channel=http%3A%2F%2Fstatic.ak.facebook.com%2Fconnect%2Fxd_arbiter%2FZEbdHPQfV3x.js%3Fversion%3D41%23cb%3Df3cd6f98ec%26domain%3Dfb-post-planner-1.appspot.com%26origin%3Dhttp%253A%252F%252Ffb-post-planner-1.appspot.com%252Fff5645964%26relation%3Dparent.parent&amp;href=https%3A%2F%2Fdevelopers.facebook.com%2Fapps%2F698224480265000%2Fdashboard%2F&amp;layout=standard&amp;locale=en_US&amp;sdk=joey&amp;share=false&amp;show_faces=false" style="border: none; visibility: visible; width: 450px; height: 20px;" class=""></iframe></span></div>
+			<div class="fb-like fb_iframe_widget" data-href="https://developers.facebook.com/apps/375092569306818/dashboard/" data-layout="standard" data-action="like" data-show-faces="false" data-share="false" fb-xfbml-state="rendered" fb-iframe-plugin-query="action=like&amp;app_id=698224480265000&amp;href=https%3A%2F%2Fdevelopers.facebook.com%2Fapps%2F698224480265000%2Fdashboard%2F&amp;layout=standard&amp;locale=en_US&amp;sdk=joey&amp;share=false&amp;show_faces=false"><span style="vertical-align: bottom; width: 450px; height: 20px;"><iframe name="f2c22852b8" width="1000px" height="1000px" frameborder="0" allowtransparency="true" scrolling="no" title="fb:like Facebook Social Plugin" src="http://www.facebook.com/v2.1/plugins/like.php?action=like&amp;app_id=698224480265000&amp;channel=http%3A%2F%2Fstatic.ak.facebook.com%2Fconnect%2Fxd_arbiter%2FZEbdHPQfV3x.js%3Fversion%3D41%23cb%3Df3cd6f98ec%26domain%3Dfb-post-planner-1.appspot.com%26origin%3Dhttp%253A%252F%252Ffb-post-planner-1.appspot.com%252Fff5645964%26relation%3Dparent.parent&amp;href=https%3A%2F%2Fdevelopers.facebook.com%2Fapps%2F698224480265000%2Fdashboard%2F&amp;layout=standard&amp;locale=en_US&amp;sdk=joey&amp;share=false&amp;show_faces=false" style="border: none; visibility: visible; width: 450px; height: 20px;" class=""></iframe></span></div>
 
     </div>
 	
 	</div><!-- /.container -->
 
-    <script src="/static/js/vendors/jquery.js"></script>
+    <script id="facebook-jssdk" src="//connect.facebook.net/en_US/sdk.js"></script><script src="/static/js/vendors/jquery.js"></script>
     <script src="/static/js/vendors/bootstrap.min.js"></script>
-	<script src="/static/js/vendors/handlebars.js"></script>
     <script src="/static/js/app.js"></script>
-    <script src="/static/js/bootstrap.js"></script>
 	
 </body>
 
