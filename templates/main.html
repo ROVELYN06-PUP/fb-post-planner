@@ -1,61 +1,52 @@
 <html>
-<head>
-    <title>Fb Post Planner | Team 4</title>
-    <link rel="stylesheet" type="text/css" href="/static/css/bootstrap.css">
-    <link rel="stylesheet" type="text/css" href="/static/css/main.css">
-</head>
-
-<body style="background-image:url('/static/img/bg.jpg');
-	background-size:100% 100%;
-	background-repeat:no-repeat;
-	background-attachment:fixed;
-	color:white !important;">
-	
-	<div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
-		<div class="container">
+	<head>
+		<title>FB Post Planner| team 4</title>
+			<link rel="stylesheet" type="text/css" href="/static/css/bootstrap.css" />
+			<link type="text/css" rel="stylesheet" href="/static/css/jquery.toastmessage.css" />
+			<script src="/static/js/vendors/jquery.js"></script>
+			<script src="/static/js/vendors/jquery-1.5.min.js"></script>
+			<script src="/static/js/vendors/jquery.toastmessage.js"></script>
+			<script src="/static/js/vendors/bootstrap.js"></script>
+			<script src="/static/js/app.js"></script>
+	</head>
+	<body 
+	  style="background-image:url('/static/img/owl.jpg');
+	  background-size:100% 100%;
+	  background-repeat:no-repeat;
+	  background-attachment:fixed;
+	  color:white !important;">
+		   <div class="navbar navbar-default" style="background-color:black">
+			<div class="container">
 			<div class="navbar-header">
-				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-				<span class="sr-only">Toggle navigation</span>
-				<span class="icon-bar"></span>
-				<span class="icon-bar"></span>
-				<span class="icon-bar"></span>
-				</button>
-				<a class="navbar-brand" href="#">
-				<span style="color:#8152e2;">Team 4 |</span>
-				<span style="color:white;">Fb-Post Planner</span></a>
-			</div>
-			<div class="collapse navbar-collapse">
-				<ul class="nav navbar-nav">
-					<li><a href="#">Post Status</a></li>
-				</ul>
-				<div id="fb-login" type="button" class="btn btn-primary navbar-btn navbar-right">Sign In</div>
-					<div id="fb-logout" type="button" class="btn btn-primary navbar-btn navbar-right" style="display:none">Log Out</div>
-				
-			</div><!--/.nav-collapse -->
+			<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-responsive-collapse">
+			  <span class="icon-bar"></span>
+			  <span class="icon-bar"></span>
+			  <span class="icon-bar"></span>
+			</button>
+			<a class="navbar-brand" href="#">FaceBook Post Planner</a>
+		  </div>
+		  <div class="navbar-collapse collapse navbar-responsive-collapse" >
+			<ul class="nav navbar-nav">
+			  <li><a href="#">Status Area</a></li>
+			</ul>
+			<div id="fb-login" type="button" class="btn btn-primary navbar-btn navbar-right"><i class="fa fa-facebook"></i> | Sign in</div>
+			<div id="fb-logout" type="button" class="btn btn-primary navbar-btn navbar-right" style="display:none;"><i class="fa fa-facebook"></i> | Logout</div>
+		  </div>
+		  </div>
 		</div>
-	</div>
-	<div class="line"></div>
-
-	<div class="container" style='position: relative;'>
-		 <div class="row">
-            <form role="form" id="post-form">
-              <div class="form-group">
-                <label for="exampleInputEmail1"><strong><font face="Maiandra GD" size="6">What's on your mind? </font></strong></label><hr>
-                <textarea class="form-control" id="message" rows="5" required="" placeholder="Type your post here.."></textarea>
-              </div>
-              <button type="submit" class="btn btn-danger btn-facebook">Post</button>
-            </form>
-
-			<div class="fb-like fb_iframe_widget" data-href="https://developers.facebook.com/apps/375092569306818/dashboard/" data-layout="standard" data-action="like" data-show-faces="false" data-share="false" fb-xfbml-state="rendered" fb-iframe-plugin-query="action=like&amp;app_id=698224480265000&amp;href=https%3A%2F%2Fdevelopers.facebook.com%2Fapps%2F698224480265000%2Fdashboard%2F&amp;layout=standard&amp;locale=en_US&amp;sdk=joey&amp;share=false&amp;show_faces=false"><span style="vertical-align: bottom; width: 450px; height: 20px;"><iframe name="f2c22852b8" width="1000px" height="1000px" frameborder="0" allowtransparency="true" scrolling="no" title="fb:like Facebook Social Plugin" src="http://www.facebook.com/v2.1/plugins/like.php?action=like&amp;app_id=698224480265000&amp;channel=http%3A%2F%2Fstatic.ak.facebook.com%2Fconnect%2Fxd_arbiter%2FZEbdHPQfV3x.js%3Fversion%3D41%23cb%3Df3cd6f98ec%26domain%3Dfb-post-planner-1.appspot.com%26origin%3Dhttp%253A%252F%252Ffb-post-planner-1.appspot.com%252Fff5645964%26relation%3Dparent.parent&amp;href=https%3A%2F%2Fdevelopers.facebook.com%2Fapps%2F698224480265000%2Fdashboard%2F&amp;layout=standard&amp;locale=en_US&amp;sdk=joey&amp;share=false&amp;show_faces=false" style="border: none; visibility: visible; width: 450px; height: 20px;" class=""></iframe></span></div>
-
-    </div>
-	
-	</div><!-- /.container -->
-
-    <script id="facebook-jssdk" src="//connect.facebook.net/en_US/sdk.js"></script><script src="/static/js/vendors/jquery.js"></script>
-    <script src="/static/js/vendors/bootstrap.min.js"></script>
-    <script src="/static/js/app.js"></script>
-	
+		   <div class="container">
+				<div class='row'>
+					<h3>What's on your mind</h3>
+					<form role="form" id="postmessage">
+					  <div class="form-group" style="margin-top: 70px;">
+						<textarea class="form-control" id="message" required placeholder="Type your text here..." style="resize:none; height: 100px;"></textarea>
+					  </div>
+					  <button type="submit" class="btn btn-danger btn-facebook" style="margin-right: 50px;"> <strong><font face="Maiandra GD" size="2">Post This!</font>
+					  </strong></button>
+					  <div class="fb-like" data-share="true" data-width="450" data-show-faces="true"></div>
+		</form>
+		</div>
+		<div class="toast-container toast-position-top-center"></div> 
+		</div>
 </body>
-
 </html>
