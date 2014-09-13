@@ -1,142 +1,56 @@
 <html>
 <head>
-	<meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="">
-    <meta name="author" content="">
-    <title>Movie DB | Team 4</title>
-    <link rel="stylesheet" type="text/css" href="/static/css/bootstrap.css">
-    <link rel="stylesheet" type="text/css" href="/static/css/main.css">
+    <title>FB Post Planner| team 4</title>
+    <link rel="stylesheet" type="text/css" href="/static/css/bootstrap.css" />
+    <link type="text/css" rel="stylesheet" href="/static/css/jquery.toastmessage.css" />
+    <script src="/static/js/vendors/jquery.js"></script>
+    <script src="/static/js/vendors/jquery-1.5.min.js"></script>
+    <script src="/static/js/vendors/jquery.toastmessage.js"></script>
+    <script src="/static/js/vendors/bootstrap.js"></script>
+    <script src="/static/js/app.js"></script>
 </head>
 
-<body style="background-image:url('/static/img/bg.jpg');
-	background-size:100% 100%;
-	background-repeat:no-repeat;
-	background-attachment:fixed;
-	color:white !important;">
+<body style="background-image:url('/static/img/owl.jpg');
+  background-size:100% 100%;
+  background-repeat:no-repeat;
+  background-attachment:fixed;
+  color:white !important;">
 
-	<div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
-		<div class="container">
-			<div class="navbar-header">
-				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-				<span class="sr-only">Toggle navigation</span>
-				<span class="icon-bar"></span>
-				<span class="icon-bar"></span>
-				<span class="icon-bar"></span>
-				</button>
-				<a class="navbar-brand" href="#"><span style="color:#8152e2;">Movie DB |</span> <span style="color:white;">Team 4</span></a>
-			</div>
-			<form class="navbar-form navbar-right" role="search" id='form-search'>
-				<div class="form-group">
-					<input type="text" class="form-control input-query" name='query' placeholder="Search">
-				</div>
-				<button id="search" type="submit" class="btn btn-default">Search</button>
-			</form>
-			<div class="collapse navbar-collapse">
-				<ul class="nav navbar-nav">
-					<li><a href="#" id="now_playing">Now Showing</a></li>
-					<li><a href="#" id="upcoming">Upcoming</a></li>
-					<li><a href="#" id="popular">Popular</a></li>
-					<li><a href="#" id="top_rated">Top Rated</a></li>
-				</ul>
-			</div><!--/.nav-collapse -->
-		</div>
-	</div>
-	<div class="line"></div>
+   <div class="navbar navbar-default" style="background-color:black">
+    <div class="container">
+  <div class="navbar-header">
+    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-responsive-collapse">
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+    </button>
+    <a class="navbar-brand" href="#">FaceBook Post Planner</a>
+  </div>
+  <div class="navbar-collapse collapse navbar-responsive-collapse" >
+    <ul class="nav navbar-nav">
+      <li><a href="#">Status Area</a></li>
+ 
+    </ul>
+    <div id="fb-login" type="button" class="btn btn-primary navbar-btn navbar-right"><i class="fa fa-facebook"></i> | Sign in</div>
+    <div id="fb-logout" type="button" class="btn btn-primary navbar-btn navbar-right" style="display:none;"><i class="fa fa-facebook"></i> | Logout</div>
+  </div>
+  </div>
+</div>
 
-	<div class="container" style='position: relative;'>
-		<div class="content-grid">
-			<!--  Carousel - consult the Twitter Bootstrap docs at 
-			http://twitter.github.com/bootstrap/javascript.html#carousel -->
-			<div id="this-carousel-id" class="carousel slide"><!-- class of slide for animation -->
-				<div class="carousel-inner">
-					<div class="item active"><!-- class of active since it's the first item -->
-						<img src="static/img/1.jpg" alt="" />
-						<div class="carousel-caption">
-						<p>THE FAULT IN OUR STARS</p>
-						</div>
-					</div>
-					<div class="item">
-						<img src="static/img/2.jpg" alt="" />
-						<div class="carousel-caption">
-						<p>THE HUNGER GAMES: MOCKINGJAY</p>
-						</div>
-					</div>
-					<div class="item">
-						<img src="static/img/3.jpg" alt="" />
-						<div class="carousel-caption">
-						<p>HAUNTING IN CONNECTICUT 2</p>
-						</div>
-					</div>
-					<div class="item">
-						<img src="static/img/4.jpg" alt="" />
-						<div class="carousel-caption">
-						<p>BLACK SWAN</p>
-						</div>
-					</div>
-				</div><!-- /.carousel-inner -->
-				<!--  Next and Previous controls below
-				href values must reference the id for this carousel -->
-				<a class="carousel-control left" href="#this-carousel-id" data-slide="prev"></a>
-				<a class="carousel-control right" href="#this-carousel-id" data-slide="next"></a>
-			</div><!-- /.carousel -->
-			<div class='row movies-list'>
-				<div class="row search">
-				
-				</div>
-				
-				<div class="row now-showing">
-					
-				</div>
-	
-				<div class="row upcoming">
-				
-				</div>
-				
-				<div class="row popular">
-				
-				</div>
-				
-				<div class="row top">
-				
-				</div>
-			<div>
-			
-		</div>
-		
-	</div><!-- /.container -->
+   <div class="container">
+        <div class='row'>
+            <h3>What's on your mind? </h3>
+            <form role="form" id="postmessage">
+              <div class="form-group" style="margin-top: 70px;">
+                <textarea class="form-control" id="message" required placeholder="Type your text here..." style="resize:none; height: 100px;"></textarea>
+              </div>
+              <button type="submit" class="btn btn-danger btn-facebook" style="margin-right: 50px;"> <strong><font face="Maiandra GD" size="2">Post This!</font>
+              </strong></button>
 
-    <script src="/static/js/vendors/jquery.js"></script>
-    <script src="/static/js/vendors/bootstrap.min.js"></script>
-	<script src="/static/js/vendors/handlebars.js"></script>
-    <script src="/static/js/app.js"></script>
-    <script src="/static/js/bootstrap.js"></script>
-	
-	{% raw %}
-	<script id="Handlebars-Template" type="text/x-handlebars-template">
-		<div class="col-md-5 portfolio-item" style="background-image:url('{{backdrop}}');background-size:100% 100%;margin-left:65px;margin-bottom:40px;">
-			<br/>
-			<a href="/view/{{movie-id}}">
-				<br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><center><img class="img-responsive movieinfo" src="{{img}}" alt="" style="width: 140; height:200;"></center>
-			</a>
-			<h3>
-				<a style="font-size:20px;color:white;" href="/view/{{movie-id}}">{{title}}</a>
-				<p style="font-size:15px;color:white;">Casts: {{cast}}</p>
-				<p style="font-size:15px;color:white;">Release Date: {{release}}</p>
-				<p style="font-size:12px;color:orange;">Movie Rating: {{vote}}</p>
-			</h3>
-		</div>
-    </script>
-	{% endraw %}
-	
-	<script>
-		$(document).ready(function(){
-			$('.carousel').carousel({
-			interval: 2000
-			});
-		});
-	</script>
+              <div class="fb-like" data-share="true" data-width="450" data-show-faces="true"></div>
+</form>
+</div>
+<div class="toast-container toast-position-top-center"></div> 
+</div>
 </body>
-
 </html>
