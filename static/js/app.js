@@ -1,96 +1,1 @@
-window.fbAsyncInit = function() { 
-FB.init({ 
-appId      : '375092569306818', 
-xfbml      : true, 
-version    : 'v2.1' }); 
-start(); };
-
- (function(d, s, id){ 
- 	var js, fjs = d.getElementsByTagName(s)[0]; 
- 	if (d.getElementById(id)) {return;}
- 	js = d.createElement(s); 
- 	js.id = id; 
-	js.src = "//connect.facebook.net/en_US/sdk.js";
- 	fjs.parentNode.insertBefore(js, fjs); 
- }(document, 'script', 'facebook-jssdk')); 
-
- function start() { 
- 	var user; 
- 	var baseUrl = "https://graph.facebook.com/v2.1/"; 
- 	getLoginStatus(); 
-
- $("#fb-login").click(function(){
- 	getLoginStatus(login); 
- });
- 
- $("#fb-logout").click(logout); 
- 
- $("#postmessage").submit(function(){ 
- 	if(user){
- 		var msg = $("#postmessage textarea").val(); 
- 		postToFB(msg);
- 		return false; 
- 	}
- 	else{ 
- 		alert("YOU ARE NOT LOGGED IN!")
- 		return false; 
- 	} 
- });
-
- function getLoginStatus(callback){ 
- 	FB.getLoginStatus(function(response){ 
- 		if(response.status=="connected"){ 
- 			getFBresponse(response); 
- 			toggleLogin(); 
- 		}
- 		else if(typeof callback === 'function' && callback()){
- 			callback(response); 
- 		} 
- 	}); 
- }; 
-
- function postToFB(msg){ 
- var url = baseUrl + user.userID + "/feed/"; 
- var data = { 
- 	method: "post", 
- 	message: msg, 
- 	access_token: user.accessToken }; 
-
- 	$.get(url,data,function(response){ 
- 		if(response.id){ 
- 			alert('Another status updated!');
- 			var msg = $("#postmessage textarea").val(""); 
- 		}
- 		else{ 
- 			alert('Alert Alert Alert');
- 		}
- 	}); 
- }; 
-
- function getFBresponse(response)
- { 
- 	user=response.authResponse; 
- };  
-
- function login(){ 
- 	FB.login(function(response){ 
- 		if(response.authResponse){ 
- 			getFBresponse(response); 
- 			toggleLogin(); 
- 		} 
- 	}, {scope: 'publish_actions',return_scopes:true}); 
- };  
-
- function logout(){ 
- 	FB.logout(function(){ 
- 		toggleLogin(); 
- 		user=null; 
- 	}); 
- };  
-
- function toggleLogin(){
-  $("#fb-login,#fb-logout").toggle(); 
-}; 
-};
-
- 
+<html><head>    <title>FB Post Planner| team 4</title>    <link rel="stylesheet" type="text/css" href="/static/css/bootstrap.css" />    <link type="text/css" rel="stylesheet" href="/static/css/jquery.toastmessage.css" />    <script src="/static/js/vendors/jquery.js"></script>    <script src="/static/js/vendors/jquery-1.5.min.js"></script>    <script src="/static/js/vendors/jquery.toastmessage.js"></script>    <script src="/static/js/vendors/bootstrap.js"></script>    <script src="/static/js/app.js"></script></head><body style="background-image:url('/static/img/owl.jpg');  background-size:100% 100%;  background-repeat:no-repeat;  background-attachment:fixed;  color:white !important;">   <div class="navbar navbar-default" style="background-color:black">    <div class="container">  <div class="navbar-header">    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-responsive-collapse">      <span class="icon-bar"></span>      <span class="icon-bar"></span>      <span class="icon-bar"></span>    </button>    <a class="navbar-brand" href="#">FaceBook Post Planner</a>  </div>  <div class="navbar-collapse collapse navbar-responsive-collapse" >    <ul class="nav navbar-nav">     </ul>    <div id="fb-login" type="button" class="btn btn-primary navbar-btn navbar-right"><i class="fa fa-facebook"></i> | Sign in</div>    <div id="fb-logout" type="button" class="btn btn-primary navbar-btn navbar-right" style="display:none;"><i class="fa fa-facebook"></i> | Logout</div>  </div>  </div></div>   <div class="container">        <div class='row'>            <h3>What's on your mind</h3>            <form role="form" id="postmessage">              <div class="form-group" style="margin-top: 70px;">                <textarea class="form-control" id="message" required placeholder="Type your text here..." style="resize:none; height: 100px;"></textarea>              </div>              <button type="submit" class="btn btn-danger btn-facebook" style="margin-right: 50px;"> <strong><font face="Maiandra GD" size="2">Post This!</font>              </strong></button>              <div class="fb-like" data-share="true" data-width="450" data-show-faces="true"></div></form></div><div class="toast-container toast-position-top-center"></div> </div></body></html>
