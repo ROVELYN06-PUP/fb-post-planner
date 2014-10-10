@@ -1,0 +1,95 @@
+<html>
+<head>
+    
+    <link rel="stylesheet" type="text/css" href="/static/css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="/static/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="/static/css/bootstrap-datetimepicker.min.css">
+
+    <script src="/static/js/vendors/jquery.js"></script>
+    <script src="/static/js/vendors/bootstrap.min.js"></script>
+    <script src="/static/js/app.js"></script>
+    <script src="/static/js/bootstrap-datetimepicker.min.js"></script>
+
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="css/agency.css" rel="stylesheet">
+
+    <!-- Custom Fonts -->
+    <link href="static/font-awesome-4.1.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="http://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+    <link href='http://fonts.googleapis.com/css?family=Kaushan+Script' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700' rel='stylesheet' type='text/css'>
+
+</head>
+<br><br><br><br><br><br>
+<font color="black" !important>
+      <section class="container" id="list" >    
+
+    <div class="postlist">
+    	<font color="white"><b><h3>Scheduled Posts:</h3></b></font>
+    	{% for post in posts %}
+    	
+       		<div class="panel panel-info">
+			  <div class="panel-heading">
+			    <h3 class="panel-title">{{post.date_to_post}}
+			    	<a class="badge pull-right" href="/edit/{{post.key.id()}}">Edit</a>
+			    	<a class="badge pull-right" href="/delete/{{post.key.id()}}">Delete</a>
+			    </h3>
+			    
+			  </div>
+			  <div class="panel-body">
+			    {{post.message}}
+			  </div>
+			</div>
+    	{% else %}
+    	
+    	<div>
+       	 	<b><font color="#3FFFF66">Oooops! Nothing found! Try it now!!</font></b><a href="/">CLICK HERE</a>
+       	 </div>
+       	 {% endfor %}
+
+    </div>
+
+    <div class="postlist">
+      <font color="white"><b><h3>Posted:</h3></b></font>
+      {% for post in posted %}
+      
+          <div class="panel panel-info">
+        <div class="panel-heading">
+          <h3 class="panel-title">{{post.date_to_post}}
+            <a class="badge pull-right" href="/edit/{{post.key.id()}}">Edit</a>
+            <a class="badge pull-right" href="/delete/{{post.key.id()}}">Delete</a>
+          </h3>
+          
+        </div>
+        <div class="panel-body">
+          {{post.message}}
+        </div>
+      </div>
+      {% else %}
+      
+      <div>
+          No post to show
+         </div>
+         {% endfor %}
+
+    </div>
+    	
+    	<!-- End of Content-->
+        <div class="fb-like" data-href="https://developers.facebook.com/apps/375092569306818/dashboard/" data-layout="standard" data-action="like" data-show-faces="false" data-share="false"></div>
+
+</section>
+</font>
+   <link rel="stylesheet" type="text/css" href="/static/css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="/static/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="/static/css/bootstrap-datetimepicker.min.css">
+
+    <script src="/static/js/vendors/jquery.js"></script>
+    <script src="/static/js/vendors/bootstrap.min.js"></script>
+    <script src="/static/js/app.js"></script>
+    <script src="/static/js/bootstrap-datetimepicker.min.js"></script>
+
+</body>
+</html>

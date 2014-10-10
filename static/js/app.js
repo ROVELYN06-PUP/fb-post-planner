@@ -27,19 +27,7 @@ initialize(); };
         $("#post-form").attr("action","/post-now").submit();
     })
     $("#fb-logout").click(logout);
-    /*
-    $("#post-form").submit(function(){
-    	if(user){
-    		var msg = $("#post-form textarea").val();
-    		postToFB(msg);
-    		return false;
-    	}else{
-    		alert("Please Login to post");
-    		return false;
-    	}
-    });
-
-*/
+    
     $("#post-form [name='date_to_post']").keypress(function(ev){
         ev.preventDefault();
     });
@@ -64,24 +52,7 @@ initialize(); };
     		}
     	});
     }
-    /*
-    function postToFB(msg){
-    	var url = baseUrl + user.userID + "/feed/";
-    	var data = {
-					method: "post",
-					message: msg,
-					access_token: user.accessToken
-				};
-		$.get(url,data,function(response){
-					if(response.id){
-						alert('Post Successful');
-						var msg = $("#post-form textarea").val("");
-					}else{
-						alert('An error occured. Try to reload the page and try again.')
-					}
-				});	
-    }
-    */
+
     function getFBresponse(response){
     	user=response.authResponse;
         if(user){
