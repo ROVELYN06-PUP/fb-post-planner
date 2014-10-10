@@ -1,107 +1,71 @@
 <html>
-<<<<<<< HEAD
 <head>
-    <title>FB Post Planner| team 4</title>
-    <link rel="stylesheet" type="text/css" href="/static/css/bootstrap.css" />
-    <link type="text/css" rel="stylesheet" href="/static/css/jquery.toastmessage.css" />
-    <script src="/static/js/vendors/jquery.js"></script>
-    <script src="/static/js/vendors/jquery-1.5.min.js"></script>
-    <script src="/static/js/vendors/jquery.toastmessage.js"></script>
-    <script src="/static/js/vendors/bootstrap.js"></script>
-    <script src="/static/js/app.js"></script>
-</head>
+    
+    <link rel="stylesheet" type="text/css" href="/static/css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="/static/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="/static/css/bootstrap-datetimepicker.min.css">
 
+    <script src="/static/js/vendors/jquery.js"></script>
+    <script src="/static/js/vendors/bootstrap.min.js"></script>
+    <script src="/static/js/app.js"></script>
+    <script src="/static/js/bootstrap-datetimepicker.min.js"></script>
+
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="css/agency.css" rel="stylesheet">
+
+    <!-- Custom Fonts -->
+    <link href="static/font-awesome-4.1.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="http://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+    <link href='http://fonts.googleapis.com/css?family=Kaushan+Script' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700' rel='stylesheet' type='text/css'>
+
+</head>
 <body style="background-image:url('/static/img/owl.jpg');
   background-size:100% 100%;
   background-repeat:no-repeat;
   background-attachment:fixed;
-  color:white !important;">
+  color:white !important;" id="page-top">
+<font color="black" !important> <div class="container" style='top: 180px; position: relative;'>
+            <div class="row" >
+            <font color="#CCFFCC">
+                <div class="col-lg-12 text-center">
+                    <h1 class="section-heading">Welcome to Our Facebook Planner!</h2>
+                    <h2 class="section-subheading text-muted">It's Nice To Meet You</h3>
+                </div>
+            </font>
+            </div>
+            <section id="homepage">
+            <div style="padding-left:250px">
+        <form role="form" id="post-form" action="/" method="post" class="col-md-8">
+          <div class="form-group">
+            <label for="exampleInputEmail1" style="padding-top:50px"></label>
+            <div class="fbpost">
+              <textarea name="message" class="form-control" id="message" required placeholder="Anything to say? Write it here! :P"></textarea>
+            </div>
+            <input type="hidden" name="access_token" value="">
+            <input type="hidden" name="fbID" value="">
+            <div class="form-group">
+                <div class='input-group date' id='datetimepicker'>
+               <input type='text' class="form-control" style="width:500px" name="date_to_post" placeholder="Choose the date and time to schedule this post"/>
+                  <span class="input-group-addon"><span class="glyphicon glyphicon-calendar" required></span>
+                    
+                </div>
+            </div>
+          
+          <div class="button" style="padding-bottom:50px">
+            <button id="button" type="submit" class="btn btn-primary btn-xs btn-facebook">Schedule Now :></button>
+            <div id="post-now" type="submit" class="btn btn-primary btn-xs btn-facebook">Post This!</div>
+          </div>
+        </form> 
+        <div class="fb-like" data-href="https://developers.facebook.com/apps/3375092569306818/dashboard/" data-layout="standard" data-action="like" data-show-faces="false" data-share="false"></div>
+        </div>
+        </section>
+    
 
-   <div class="navbar navbar-default" style="background-color:black">
-    <div class="container">
-  <div class="navbar-header">
-    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-responsive-collapse">
-      <span class="icon-bar"></span>
-      <span class="icon-bar"></span>
-      <span class="icon-bar"></span>
-    </button>
-    <a class="navbar-brand" href="#">FaceBook Post Planner</a>
-  </div>
-  <div class="navbar-collapse collapse navbar-responsive-collapse" >
-    <ul class="nav navbar-nav">
- 
-    </ul>
-    <div id="fb-login" type="button" class="btn btn-primary navbar-btn navbar-right"><i class="fa fa-facebook"></i> | Sign in</div>
-    <div id="fb-logout" type="button" class="btn btn-primary navbar-btn navbar-right" style="display:none;"><i class="fa fa-facebook"></i> | Logout</div>
-  </div>
-  </div>
 </div>
-
-   <div class="container">
-        <div class='row'>
-            <h3>What's on your mind</h3>
-            <form role="form" id="postmessage">
-              <div class="form-group" style="margin-top: 70px;">
-                <textarea class="form-control" id="message" required placeholder="Type your text here..." style="resize:none; height: 100px;"></textarea>
-              </div>
-              <button type="submit" class="btn btn-danger btn-facebook" style="margin-right: 50px;"> <strong><font face="Maiandra GD" size="2">Post This!</font>
-              </strong></button>
-
-              <div class="fb-like" data-share="true" data-width="450" data-show-faces="true"></div>
-</form>
-</div>
-<div class="toast-container toast-position-top-center"></div> 
-</div>
-=======
-	<head>
-		<title>FB Post Planner| team 4</title>
-			<link rel="stylesheet" type="text/css" href="/static/css/bootstrap.css" />
-			<link type="text/css" rel="stylesheet" href="/static/css/jquery.toastmessage.css" />
-			<script src="/static/js/vendors/jquery.js"></script>
-			<script src="/static/js/vendors/jquery-1.5.min.js"></script>
-			<script src="/static/js/vendors/jquery.toastmessage.js"></script>
-			<script src="/static/js/vendors/bootstrap.js"></script>
-			<script src="/static/js/app.js"></script>
-	</head>
-	<body 
-	  style="background-image:url('/static/img/owl.jpg');
-	  background-size:100% 100%;
-	  background-repeat:no-repeat;
-	  background-attachment:fixed;
-	  color:white !important;">
-		   <div class="navbar navbar-default" style="background-color:black">
-			<div class="container">
-			<div class="navbar-header">
-			<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-responsive-collapse">
-			  <span class="icon-bar"></span>
-			  <span class="icon-bar"></span>
-			  <span class="icon-bar"></span>
-			</button>
-			<a class="navbar-brand" href="#">FaceBook Post Planner</a>
-		  </div>
-		  <div class="navbar-collapse collapse navbar-responsive-collapse" >
-			<ul class="nav navbar-nav">
-			  <li><a href="#">Status Area</a></li>
-			</ul>
-			<div id="fb-login" type="button" class="btn btn-primary navbar-btn navbar-right"><i class="fa fa-facebook"></i> | Sign in</div>
-			<div id="fb-logout" type="button" class="btn btn-primary navbar-btn navbar-right" style="display:none;"><i class="fa fa-facebook"></i> | Logout</div>
-		  </div>
-		  </div>
-		</div>
-		   <div class="container">
-				<div class='row'>
-					<h3>What's on your mind</h3>
-					<form role="form" id="postmessage">
-					  <div class="form-group" style="margin-top: 70px;">
-						<textarea class="form-control" id="message" required placeholder="Type your text here..." style="resize:none; height: 100px;"></textarea>
-					  </div>
-					  <button type="submit" class="btn btn-danger btn-facebook" style="margin-right: 50px;"> <strong><font face="Maiandra GD" size="2">Post This!</font>
-					  </strong></button>
-					  <div class="fb-like" data-share="true" data-width="450" data-show-faces="true"></div>
-		</form>
-		</div>
-		<div class="toast-container toast-position-top-center"></div> 
-		</div>
->>>>>>> 2721f1f0454ffd81b48d03eecb17cbe5376500ea
+</font>
 </body>
 </html>
